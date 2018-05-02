@@ -9,7 +9,7 @@ import java.util.List;
  * Created by LabApp on 11.04.2018.
  */
 
-public class SimpleMenu extends SimpleAbstractMenu {
+public class SimpleMenu extends SimpleAbctMenu {
 
     public SimpleMenu(Menu menu, MenuItemCallback callback){
         super();

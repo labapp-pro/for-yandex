@@ -11,11 +11,6 @@ import android.support.v4.view.ViewCompat;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
-import com.google.android.gms.common.GooglePlayServicesRepairableException;
-import com.google.android.gms.common.GooglePlayServicesUtil;
-import com.google.android.gms.security.ProviderInstaller;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -159,19 +154,6 @@ public class Helper {
         return chaine.toString();
     }
 
-    public static void updateAndroidSecurityProvider(Activity callingActivity) {
-        if (android.os.Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            try {
-                ProviderInstaller.installIfNeeded(callingActivity);
-            } catch (GooglePlayServicesRepairableException e) {
-
-                GooglePlayServicesUtil.getErrorDialog(e.getConnectionStatusCode(), callingActivity, 0);
-            } catch (GooglePlayServicesNotAvailableException e) {
-                e.printStackTrace();
-
-            }
-        }
-    }
 
 
 }

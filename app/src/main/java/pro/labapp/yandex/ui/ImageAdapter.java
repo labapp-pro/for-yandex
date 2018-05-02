@@ -17,13 +17,13 @@ import pro.labapp.yandex.R;
  * Created by LabApp on 13.04.2018.
  */
 
-public class ImageAdapter extends ArrayAdapter<TumblrItem> {
+public class ImageAdapter extends ArrayAdapter<TmblrItem> {
 
-    private ArrayList<TumblrItem> listData;
+    private ArrayList<TmblrItem> listData;
     private LayoutInflater layoutInflater;
     private Context mContext;
 
-    public ImageAdapter(Context context, Integer something, ArrayList<TumblrItem> listData) {
+    public ImageAdapter(Context context, Integer something, ArrayList<TmblrItem> listData) {
         super(context, something, listData);
         this.listData = listData;
         layoutInflater = LayoutInflater.from(context);
@@ -36,7 +36,7 @@ public class ImageAdapter extends ArrayAdapter<TumblrItem> {
     }
 
     @Override
-    public TumblrItem getItem(int position) {
+    public TmblrItem getItem(int position) {
         return listData.get(position);
     }
 

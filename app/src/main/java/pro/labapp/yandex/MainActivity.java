@@ -12,21 +12,13 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
-import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,11 +29,11 @@ import pro.labapp.yandex.drawer.NavItem;
 import pro.labapp.yandex.drawer.SimpleMenu;
 import pro.labapp.yandex.drawer.TabAdapter;
 import pro.labapp.yandex.inherit.BackPressFragment;
-import pro.labapp.yandex.inherit.PermissionsFragment;
+import pro.labapp.yandex.inherit.PermisFragment;
 import pro.labapp.yandex.util.DisableableViewPager;
 import pro.labapp.yandex.util.Helper;
 
-public class MainActivity extends AppCompatActivity implements MenuItemCallback, ConfigParser.CallBack {
+public class MainActivity extends AppCompatActivity implements MenuItemCallback, Parser.CallBack {
 
     private Toolbar mToolbar;
     private TabLayout tabLayout;
@@ -132,9 +124,9 @@ public class MainActivity extends AppCompatActivity implements MenuItemCallback,
         if (Config.USE_HARDCODED_CONFIG) {
             Config.configureMenu(menu, this);
         } else if (!Config.CONFIG_URL.isEmpty() && Config.CONFIG_URL.contains("http"))
-            new ConfigParser(Config.CONFIG_URL, menu, this, this).execute();
+            new Parser(Config.CONFIG_URL, menu, this, this).execute();
         else
-            new ConfigParser("config.json", menu, this, this).execute();
+            new Parser("config.json", menu, this, this).execute();
         tabLayout.setupWithViewPager(viewPager);
 
         if (!useTabletMenu()) {
@@ -143,9 +135,6 @@ public class MainActivity extends AppCompatActivity implements MenuItemCallback,
         }
 
         applyDrawerLocks();
-
-        Helper.updateAndroidSecurityProvider(this);
-
 
 
     }
@@ -220,9 +209,9 @@ public class MainActivity extends AppCompatActivity implements MenuItemCallback,
 
         List<String> allPermissions = new ArrayList<>();
         for (NavItem tab : tabs) {
-            if (PermissionsFragment.class.isAssignableFrom(tab.getFragment())) {
+            if (PermisFragment.class.isAssignableFrom(tab.getFragment())) {
                 try {
-                    allPermissions.addAll(Arrays.asList(((PermissionsFragment) tab.getFragment().newInstance()).requiredPermissions()));
+                    allPermissions.addAll(Arrays.asList(((PermisFragment) tab.getFragment().newInstance()).requiredPermissions()));
                 } catch (Exception e) {
                     e.printStackTrace();
 
@@ -251,13 +240,6 @@ public class MainActivity extends AppCompatActivity implements MenuItemCallback,
         return true;
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.settings_menu, menu);
-        return true;
-    }
 
 
     @Override

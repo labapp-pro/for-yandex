@@ -16,7 +16,7 @@ public class Config {
 
     public static boolean USE_HARDCODED_CONFIG = false;
 
-    public static void configureMenu(SimpleMenu menu, ConfigParser.CallBack callback){
+    public static void configureMenu(SimpleMenu menu, Parser.CallBack callback){
 
 
         callback.configLoaded(false);

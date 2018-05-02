@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Yandex </string>
+    <string name="app_name">Yandex</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -7,20 +7,6 @@
     <string name="action_settings">Settings</string>
 
     <string name="settings_other_summary">Другое</string>
-    <string name="settings_other">Оценить</string>
-
-    <string name="settings_rate_summary">Поставьте оценку и отзыв о приложении</string>
-    <string name="settings_rate">Оцените приложение</string>
-
-    <string name="settings_billing_summary">Управление покупками</string>
-    <string name="settings_billing">Покупки в приложении</string>
-
-    <string name="settings_purchase_summary">Отключение рекламы в приложении</string>
-    <string name="settings_purchase">Отключение рекламы</string>
-
-    <string name="settings_restore_purchase_success">Покупка восстановлена</string>
-    <string name="settings_purchase_success">Покупка подтверждена. Для отключения рекламы перезапустите приложение</string>
-    <string name="settings_purchase_fail">Ошибка покупки</string>
 
     <string name="dialog_purchase_title">Content locked.</string>
     <string name="dialog_purchase">In order to view this content, you need to unlock the full version by making a one time purchase.\n\nThis will also remove advertisements throughout the app.</string>
@@ -30,16 +16,13 @@
 
     <string name="image_descr">Изображение</string>
     <string name="save">Сохранить</string>
-    <string name="share_begin">Хочу поделиться изображением</string>
     <string name="saved">Сохранено в:</string>
-    <string name="set_confirm">Установить это изображение как обои?</string>
-    <string name="set_success">Вы установили новые обои!</string>
+    <string name="set_confirm">Установить как обои?</string>
+    <string name="set_success">Обои установлены!</string>
 
     <string name="settings">Настройки</string>
     <string name="invalid_configuration">Configuration could not be loaded</string>
     <string name="loading">Загрузка..</string>
-    <string name="opening_video">Opening video</string>
-    <string name="opening_audio">Opening audio</string>
     <string name="downloading">Загрузка..</string>
     <string name="yes">Да</string>
     <string name="cancel">Отмена</string>
@@ -52,8 +35,6 @@
 
     <string name="permissions_required">Необходимо предоставить разрешения для доступа к контенту</string>
 
-
-    <string name="not_open_playstore">Не найдено приложение Google Play</string>
     <string name="todo">TODO</string>
     <string name="back">Back</string>
     <string name="skip">Skip</string>
